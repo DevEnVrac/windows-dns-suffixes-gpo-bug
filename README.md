@@ -5,4 +5,10 @@ This bug appeared while playing with domain relationship infrastructure, but can
 It appeared when trying to ping NETBIOS name of computer of another domain name.
 
 > On the following scheme: red domain uses manual suffix searchlist configuration in the computers. Blue domain uses a group policy to deploy it.
+
+### Blue computer can ping red computers with NETBIOS names.
+### Blue server cannot ping red computers with NETBIOS names. But it works with full FQDN name.
+
+![GPO_suffix_bug drawio](https://github.com/NumNumV/windows-dns-suffixes-gpo-issues/assets/75941535/335096ff-a925-431a-afa8-05d24c26bc5d)
+
 ## 2. The solution.
