@@ -20,3 +20,15 @@ When going on the network card configuration on the server, *both suffixes are i
 ## 2. The solution.
 
 In order to solve the issue, you must deny the policy on Windows server. Then you will have to set manually the suffix searchlist in the network card.
+
+## 3. Reproducing the issue
+
+First we have to setup a Windows server 2012 R2 domain controler and add a group policy object that defines the DNS suffix searchlist:
+![image](https://github.com/user-attachments/assets/da0b9030-8252-478c-a0de-2bde33756adc)
+
+Then apply it on another Windows sever 2012 R2. You can check it's working by watching the network card settings:
+![image](https://github.com/user-attachments/assets/2546f755-aabc-4c13-a2bd-a7e35e9a2727)
+
+But when you try an *ipconfig /all*, only the first suffix will appear. Here is the issue:
+![image](https://github.com/user-attachments/assets/f0116720-d937-41dc-9cdd-f0cab015471a)
+
