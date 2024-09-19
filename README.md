@@ -3,7 +3,7 @@
 ## 1. Issue context and how to reproduce it.
 This bug appeared while playing with domain relationship infrastructure, but can be reproced without any relationship.
 It appeared when trying to ping NETBIOS name of computer of another domain name.  
-*Got it with Windows Server 2012 and 2016. Not tested on newer versions.*
+*Impacted versions: Windows Server 2012 and 2016. Not tested on newer versions.*
 
 > On the following scheme: red domain uses manual suffix searchlist configuration in the computers. Blue domain uses a group policy to deploy it.
 
