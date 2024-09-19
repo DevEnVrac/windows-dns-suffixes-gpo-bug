@@ -1,5 +1,5 @@
 # This article is about a bug that impact Windows Servers OS that uses a GPO to define the DNS suffix searchlist.
-*Impacted versions: Windows Server 2012 and 2016. Not tested on newer versions.*
+*Impacted versions: Windows Server 2012 R2 and 2016.*
 *Non-impacted versions: Windows Pro*
 
 ## 1. Issue context and how to reproduce it.
