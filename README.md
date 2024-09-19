@@ -5,6 +5,7 @@
 ## 1. Issue context and how to reproduce it.
 This bug appeared while playing with domain relationship infrastructure, but can be reproced without any relationship.
 It appeared when trying to ping NETBIOS name of computer of another domain name.  
+It affects the DNS suffix search list, which is made up of DNS suffixes that the computer appends to a NetBIOS short name to resolve the machine’s full domain name (e.g., when you ping MACHINE, the computer attempts ping MACHINE.example.com, ping MACHINE.test.com, and so on).
 
 > On the following scheme: red domain uses manual suffix searchlist configuration in the computers. Blue domain uses a group policy to deploy it.
 
@@ -17,7 +18,7 @@ When doing *ipconfig /all* on both computer and server, we can see the bug appea
 * Computers got both suffixes.  
 * Server applied only one suffix.
 
-When going on the network card configuration on the server, *both suffixes are installed*. Here is the issue !
+But when going on the network card configuration on the server, *both suffixes are installed*. Here is the issue !
 ## 2. The solution.
 
 In order to solve the issue, you must deny the policy on Windows server. Then you will have to set manually the suffix searchlist in the network card.
